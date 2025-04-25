@@ -54,6 +54,15 @@ const client = new Client({
     GatewayIntentBits.MessageContent,
   ]
 });
+require('dotenv').config({ debug: true });   // already there? just add debug:true
+
+console.log(
+  'DEBUG • MONITORED_CHANNEL_ID raw:',
+  JSON.stringify(process.env.MONITORED_CHANNEL_ID),
+  '(length',
+  (process.env.MONITORED_CHANNEL_ID || '').length + ')'
+);
+
 
 // Get monitored channel ID
 const monitoredChannelId = process.env.MONITORED_CHANNEL_ID || '';
